@@ -1,0 +1,56 @@
+<form (ngSubmit)="onSubmit(birthdayForm)" #birthdayForm="ngForm">
+  <div>
+    <label for="fullName">Nom complet :</label>
+    <input type="text" id="fullName" name="fullName" ngModel required>
+  </div>
+  <br>
+  <div>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" ngModel required email>
+  </div>
+  <br>
+  <div>
+    <label for="phone">Téléphone :</label>
+    <input type="tel" id="phone" name="phone" ngModel required>
+  </div>
+  <br>
+  <div>
+    <label for="date">Date de l'anniversaire :</label>
+    <input type="date" id="date" name="date" ngModel required>
+  </div>
+  <br>
+  <div>
+    <label for="guestsCount">Nombre d'invités :</label>
+    <input type="number" id="guestsCount" name="guestsCount" ngModel required>
+  </div>
+  <br>
+  <div>
+    <label for="additionalInfo">Informations supplémentaires :</label>
+    <textarea id="additionalInfo" name="additionalInfo" ngModel></textarea>
+  </div>
+  <br>
+  <button type="submit" [disabled]="!birthdayForm.valid">Enregistrer</button>
+</form>
+<h3>Liste des réservations</h3>
+<table *ngIf="birthdayRecords.length > 0">
+  <thead>
+    <tr>
+      <th>Nom complet</th>
+      <th>Email</th>
+      <th>Téléphone</th>
+      <th>Date d'anniversaire</th>
+      <th>Nombre d'invités</th>
+      <th>Informations supplémentaires</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of birthdayRecords">
+      <td>{{ record.fullName }}</td>
+      <td>{{ record.email }}</td>
+      <td>{{ record.phone }}</td>
+      <td>{{ record.date }}</td>
+      <td>{{ record.guestsCount }}</td>
+      <td>{{ record.additionalInfo }}</td>
+    </tr>
+  </tbody>
+</table>

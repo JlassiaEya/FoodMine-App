@@ -1,0 +1,51 @@
+/* Modified Search Bar CSS */
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+div input {
+  border-radius: .5rem 0 0 .5rem;
+  border: none;
+  height: 3rem;
+  width: 25rem;
+  background-color: #f1f1f1;
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  transition: background-color 0.3s;
+  -webkit-border-radius: .5rem 0 0 .5rem;
+  -moz-border-radius: .5rem 0 0 .5rem;
+  -ms-border-radius: .5rem 0 0 .5rem;
+  -o-border-radius: .5rem 0 0 .5rem;
+}
+
+div button {
+  height: 3rem;
+  width: 8rem;
+  font-size: 1rem;
+  border-radius: 0 .5rem .5rem 0;
+  border: none;
+  background-color: #FC5404;
+  color: white;
+  opacity: 0.8;
+  outline: none;
+  transition: opacity 0.3s;
+  -webkit-border-radius: 0 .5rem .5rem 0;
+  -moz-border-radius: 0 .5rem .5rem 0;
+  -ms-border-radius: 0 .5rem .5rem 0;
+  -o-border-radius: 0 .5rem .5rem 0;
+}
+
+div button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Change the background color of the input field on focus */
+div input:focus {
+  background-color: #fff;
+}

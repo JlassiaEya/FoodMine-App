@@ -1,0 +1,57 @@
+<form [formGroup]="tableInfoForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="first-name">Prénom</label>
+    <input type="text" id="first-name" formControlName="firstName">
+  </div>
+  <div>
+    <label for="last-name">Nom</label>
+    <input type="text" id="last-name" formControlName="lastName">
+  </div>
+  <div>
+    <label for="table-number">Numéro de table</label>
+    <input type="number" id="table-number" formControlName="tableNumber" min="1">
+  </div>
+  <div>
+    <label for="chair-count">Nombre chaises</label>
+    <input type="number" id="chair-count" formControlName="chairCount" min="1">
+  </div>
+  <div>
+    <label for="table-type">Table</label>
+    <select id="table-type" formControlName="tableType">
+      <option value="" disabled selected>Choisir la forme de table</option>
+      <option value="rectangle">Rectangle</option>
+      <option value="round">Round</option>
+    </select>
+  </div>
+  <div>
+    <label for="reservation-date">Date et heure de réservation</label>
+    <input type="datetime-local" id="reservation-date" formControlName="reservationDate">
+  </div>
+  <div>
+    <button type="submit">ENREGISTRER</button>
+  </div>
+</form>
+
+<h3>Liste des réservations</h3>
+<table *ngIf="reservations.length > 0">
+  <thead>
+    <tr>
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Numéro de table</th>
+      <th>Nombre chaises</th>
+      <th>Type de table</th>
+      <th>Date de réservation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let res of reservations">
+      <td>{{ res.firstName }}</td>
+      <td>{{ res.lastName }}</td>
+      <td>{{ res.tableNumber }}</td>
+      <td>{{ res.chairCount }}</td>
+      <td>{{ res.tableType }}</td>
+      <td>{{ res.reservationDate }}</td>
+    </tr>
+  </tbody>
+</table>

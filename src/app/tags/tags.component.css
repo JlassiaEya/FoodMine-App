@@ -1,0 +1,21 @@
+div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div a {
+  background-color: #f1f1f1; /* Use the color from the palette */
+  padding: 0.3rem 1rem;
+  margin: 0.2rem 0.15rem;
+  border-radius: 10rem;
+  font-weight: 600;
+  color: #F98404; /* Use the color from the palette */
+  text-decoration: none; /* Remove underline from links */
+  transition: background-color 0.3s, color 0.3s; /* Add transitions for hover effect */
+}
+
+div a:hover {
+  background-color: #F98404; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+  cursor: pointer;
+}

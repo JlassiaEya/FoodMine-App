@@ -1,0 +1,81 @@
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li a {
+  height: 24.5rem;
+  width: 25rem;
+  border: 1px solid #e72929;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #414141;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s; /* Add transitions */
+}
+
+li a:hover {
+  transform: scale(1.02); /* Enlarge the card on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.content {
+  padding: .5rem 1rem;
+  position: relative;
+}
+
+.favorite {
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  color: #e72929; /* Use the color from the palette for the favorite icon */
+  transition: color 0.3s; /* Add color transition */
+}
+
+.favorite.not {
+  color: grey; /* Use grey color for non-favorite items */
+}
+
+.stars {
+  margin-bottom: .2rem;
+}
+
+.product-item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.origins {
+  flex: 9;
+}
+
+.origins span {
+  border-radius: 2rem;
+  background-color: whitesmoke;
+  display: inline-block;
+  font-size: .7rem;
+  color: grey; /* Use grey color for origins */
+  margin-right: .3rem;
+}
+
+.cook-time {
+  font-size: .8rem;
+  flex: 3;
+  text-align: right;
+  color: #e72929; /* Use the color from the palette for cook time */
+}
+
+.price {
+  color: #e72929; /* Use the color from the palette for price */
+  margin-top: .7rem;
+}

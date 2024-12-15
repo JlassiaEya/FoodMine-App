@@ -1,0 +1,132 @@
+
+.row {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; 
+  }
+  
+  .col-md-6 {
+    width: 60%; 
+    margin-bottom: 20px;
+    background-color: #fff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    color: #333;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease; 
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  
+  input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); 
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    background-color: #2980b9;
+  }
+  
+  .alert {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  /* Styles pour la partie de résumé */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  #BoitePrix {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #BoitePrix tr td {
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+  }
+  
+  .total {
+    font-weight: bold;
+  }
+  
+
+  .checkout .foods-count{
+    margin-bottom: 1.5rem;
+}
+
+.checkout .foods-count::before{
+    content: 'Count: ';
+    color: grey;
+}
+
+.checkout .total-price::before{
+    content: 'Price: ';
+    color: grey;
+}

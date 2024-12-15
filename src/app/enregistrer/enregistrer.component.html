@@ -1,0 +1,117 @@
+<div class="row">
+
+  <div class="col-md-6">
+
+    <h2 style="margin-left: 35px;">Enregistrement des commandes</h2>
+
+    <p>Pour acheter les articles de votre panier merci de fournir les informations ci-dessous :</p>
+
+    <div class="card-biofood col-md-6 ml-3 mr-3">
+      <div class="card-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label class="float-left">Nom: </label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['firstName'].invalid}" placeholder="*******">
+            <div *ngIf="submitted && registerForm.get('firstName')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('firstName')?.hasError('required')">Le nom est obligatoire</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="float-left">Prénom: </label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['lastName'].invalid}"placeholder="*******">
+            <div *ngIf="submitted && registerForm.get('lastName')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('lastName')?.hasError('required')">Le nom est obligatoire</div>
+            </div>
+          </div>
+    
+        
+
+          <div class="form-group">
+            <label class="float-left">Email: </label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['email'].invalid}"placeholder="*** *****@gmail.com">
+            <div *ngIf="submitted && registerForm.get('email')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('email')?.hasError('required')">Le mail est obligatoire</div>
+            </div>
+          </div>
+        
+
+          <div class="form-group">
+            <label class="float-left">Adresse: </label>
+            <input type="text" formControlName="adresse" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['adresse'].invalid}"placeholder="********">
+            <div *ngIf="submitted && registerForm.get('adresse')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('adresse')?.hasError('required')">L'adresse est obligatoire</div>
+            </div>
+          </div>
+        
+         
+          <div class="form-group">
+            <label class="float-left">Telephone: </label>
+            <input type="text" formControlName="telephone" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['telephone'].invalid}" pattern="[0-9]{1,8}"
+            maxlength="8" placeholder="** *** ***">
+            <div *ngIf="submitted && registerForm.get('telephone')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('lastName')?.hasError('telephone')">Veuillez saisie un numéro de télephone valide</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="float-left">Carte Crédit: </label>
+            <input type="text" formControlName="cb" class="form-control" [ngClass]="{'is-invalid': submitted && registerForm.controls['cb'].invalid}"pattern="[0-9]{1,8}" maxlength="12" placeholder="**** **** **** ****">
+            <div *ngIf="submitted && registerForm.get('cb')?.errors" class="invalid-feedback">
+              <div *ngIf="registerForm.get('cb')?.hasError('cb')">Veuillez saisie un numéro de carte valide </div>
+            </div>
+          </div>
+        
+
+          <div class="text-center">
+            <button class="btn btn-primary mr-1" type="submit" (click)="onSubmit()">Register</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+          </div>
+          
+          <div *ngIf="showConfirmation" class="alert alert-success mt-3">
+            Votre enregistrement a été effectué avec succès!
+          </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+      
+
+
+    <div class="card-biofood mr-3 col-md-6">
+      <div class="card-body">
+        <div>
+          <ul>
+            <li class="float-left">Livraison garantie.</li>
+            <li class="float-left">Des frais de {{ frais.toFixed(2) }} DNT</li>
+          </ul>
+        </div>
+        <br>
+        <br>
+
+        
+        <div class="checkout">
+          <table id="BoitePrix" class="float-right mt-5 mr-5">
+            <tr>
+              <td>Sous total :</td>
+              <td class="colonneEnregistrementPrix">{{ soustotal.toFixed(2) }} DNT</td>
+            </tr>
+            <tr>
+              <td>Frais :</td>
+              <td class="colonneEnregistrementPrix">{{ frais.toFixed(2) }} DNT</td>
+            </tr>
+            <tr>
+              <td class="total">Total :</td>
+              <td class="colonneEnregistrementPrix">{{ total.toFixed(2) }} DNT</td>
+            </tr>
+          </table>
+        </div>
+        
+    </div>
+</div>
+</div>
+<button [routerLink]="['/commandes']">Voir les commandes</button>
+
+

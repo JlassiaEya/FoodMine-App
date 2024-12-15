@@ -1,0 +1,53 @@
+<form #surpriseForm="ngForm" (ngSubmit)="onSubmit(surpriseForm)">
+  <div class="form-group">
+    <label for="occasion">Occasion :</label>
+    <input type="text" id="occasion" name="occasion" class="form-control" ngModel required>
+  </div>
+  
+  <div class="form-group">
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" class="form-control" ngModel required></textarea>
+  </div>
+  
+  <div class="form-group">
+    <label for="recipient">Pour qui :</label>
+    <input type="text" id="recipient" name="recipient" class="form-control" ngModel>
+  </div>
+  
+  <div class="form-group">
+    <label for="date">Date de la surprise :</label>
+    <input type="date" id="date" name="date" class="form-control" ngModel>
+  </div>
+  
+  <div class="form-group">
+    <label for="location">Lieu de la surprise :</label>
+    <select id="location" name="location" class="form-control" [(ngModel)]="selectedLocation" required>
+      <option value="" disabled selected>Choisir le lieu</option>
+      <option value="1er">1er étage</option>
+      <option value="2eme">2ème étage</option>
+    </select>
+  </div>
+  
+  <button type="submit" [disabled]="!surpriseForm.valid" class="btn btn-primary">Envoyer Surprise</button>
+</form>
+<h3>Liste des réservations des sueprises</h3>
+<table *ngIf="surprises.length > 0">
+  <thead>
+    <tr>
+      <th>Occasion</th>
+      <th>Message</th>
+      <th>Destinataire</th>
+      <th>Date</th>
+      <th>Lieu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let surprise of surprises">
+      <td>{{ surprise.occasion }}</td>
+      <td>{{ surprise.message }}</td>
+      <td>{{ surprise.recipient }}</td>
+      <td>{{ surprise.date }}</td>
+      <td>{{ surprise.location }}</td>
+    </tr>
+  </tbody>
+</table>
